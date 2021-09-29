@@ -1,26 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home</title>
-    </head>
-    <body>
-        <h1>Hello from Home!</h1>
-        <form action="/story">
-            <h1>Madlibs!</h1>
-            <span>Place: <input type="text" placeholder="place" name="place"></span>
-            <br>
-            <span>Noun: <input type="text" placeholder="noun" name="noun"></span>
-            <br>
-            <span>Verb: <input type="text" placeholder="verb" name="verb"></span>
-            <br>
-            <span>Adjective: <input type="text" placeholder="adjective" name="adjective"></span>
-            <br>
-            <span>Plural noun: <input type="text" placeholder="plural_noun" name="plural_noun"></span>
-            <br>
-            <button>Submit!</button>
-        </form>
-    </body>
-</html>
+<html><head>
+  <title>Madlibs</title>
+</head>
+<body>
+  <h1>Madlibs</h1>
+  <form action="/story">
+    {% for prompt in prompts %}
+      <p>{{ prompt }}:
+        <input name="{{ prompt }}">
+      </p>
+    {% endfor %}
+    <button>Submit</button>
+  </form>
+
+
+</body></html>
